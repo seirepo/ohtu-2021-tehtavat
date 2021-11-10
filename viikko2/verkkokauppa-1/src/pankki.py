@@ -1,9 +1,9 @@
-from kirjanpito import Kirjanpito
+from kirjanpito import kirjanpito as default_kirjanpito
 
 
 class Pankki:
 
-    def __init__(self, kirjanpito):
+    def __init__(self, kirjanpito=default_kirjanpito):
         self._kirjanpito = kirjanpito
         pass
 
@@ -14,3 +14,5 @@ class Pankki:
 
         # täällä olisi koodi joka ottaa yhteyden pankin verkkorajapintaan
         return True
+
+pankki = Pankki()
