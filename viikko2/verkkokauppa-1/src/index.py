@@ -6,7 +6,6 @@ from viitegeneraattori import Viitegeneraattori
 
 
 def main():
-    #kauppa = Kauppa()
     kauppa = Kauppa(
         Varasto.get_instance(),
         Pankki.get_instance(),
