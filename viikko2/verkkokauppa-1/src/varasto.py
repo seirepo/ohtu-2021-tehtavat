@@ -3,17 +3,18 @@ from kirjanpito import Kirjanpito
 
 
 class Varasto:
-    __instanssi = None
+    #__instanssi = None
 
-    @staticmethod
-    def get_instance():
-        if not Varasto.__instanssi:
-            Varasto.__instanssi = Varasto()
+    #@staticmethod
+    #def get_instance():
+    #    if not Varasto.__instanssi:
+    #        Varasto.__instanssi = Varasto()
 
-        return Varasto.__instanssi
+    #   return Varasto.__instanssi
 
-    def __init__(self):
-        self._kirjanpito = Kirjanpito.get_instance()
+    def __init__(self, kirjanpito):
+        #self._kirjanpito = Kirjanpito.get_instance()
+        self._kirjanpito = kirjanpito
         self._saldot = {}
         self._alusta_tuotteet()
 

@@ -2,17 +2,19 @@ from kirjanpito import Kirjanpito
 
 
 class Pankki:
-    __instanssi = None
+    #__instanssi = None
 
-    @staticmethod
-    def get_instance():
-        if not Pankki.__instanssi:
-            Pankki.__instanssi = Pankki()
+    #@staticmethod
+    #def get_instance():
+    #    if not Pankki.__instanssi:
+    #        Pankki.__instanssi = Pankki()
 
-        return Pankki.__instanssi
+    #    return Pankki.__instanssi
 
-    def __init__(self):
-        self._kirjanpito = Kirjanpito.get_instance()
+    def __init__(self, kirjanpito):
+        #self._kirjanpito = Kirjanpito.get_instance()
+        self._kirjanpito = kirjanpito
+        pass
 
     def tilisiirto(self, nimi, viitenumero, tililta, tilille, summa):
         self._kirjanpito.lisaa_tapahtuma(
