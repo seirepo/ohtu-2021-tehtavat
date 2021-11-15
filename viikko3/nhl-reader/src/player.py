@@ -9,4 +9,5 @@ class Player:
         self.goals = goals
     
     def __str__(self):
-        return "\t" + self.name + " team " + self.team + " goals " + str(self.goals) + " assists " + str(self.assists)
+        return f"{self.nationality} \t {self.name:20} {self.team} {str(self.goals):2} + {str(self.assists):2} = {str(self.goals + self.assists)}"
+        #return "\t" + self.name + " team " + self.team + str(self.goals) + " + " + str(self.assists)

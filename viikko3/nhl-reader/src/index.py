@@ -22,17 +22,9 @@ def main():
 
     print("Oliot:")
 
-    #for player in players:
-    #    print(player)
-
-    for nat in nationalities:
-        if (nat == "FIN"):
-            print("players from " + nat)
-            for player in players:
-                if player.nationality == nat:
-                    print(player)
-
-
+    players_fin = filter(lambda x: x.nationality == "FIN", players)
+    for player in sorted(list(players_fin), key=lambda x: x.goals + x.assists, reverse=True):
+        print(player)
 
 if __name__ == "__main__":
     main()
