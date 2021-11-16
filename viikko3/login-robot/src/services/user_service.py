@@ -1,6 +1,5 @@
 import re
 from entities.user import User
-import sys, pdb
 
 class UserInputError(Exception):
     pass
@@ -35,7 +34,6 @@ class UserService:
         return user
 
     def validate(self, username, password):
-        pdb.Pdb(stdout=sys.__stdout__).set_trace()
         if not username or not password:
             raise UserInputError("Username and password are required")
 
