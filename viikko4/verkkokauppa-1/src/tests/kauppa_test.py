@@ -78,3 +78,6 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.tilimaksu("liisa", "11111")
 
         self.pankki_mock.tilisiirto.assert_called_with("liisa", 42, "11111", ANY, 5)
+
+    def test_aloita_asiointi_nollaa_edellisen_ostoksen_tiedot(self):
+        pass
