@@ -104,4 +104,15 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.aloita_asiointi()
         self.kauppa.lisaa_koriin(2)
         self.kauppa.tilimaksu("jaana", "33233")
+
         self.pankki_mock.tilisiirto.assert_called_with(ANY, 3, ANY, ANY, ANY)
+
+    def test_kauppa_poistaa_tuotteen_korista_ja_palauttaa_sen_varastoon(self):
+
+        self.kauppa.lisaa_koriin(1)
+        self.kauppa.lisaa_koriin(2)
+        self.kauppa.poista_korista(2)
+        self.kauppa.tilimaksu("jaana", "33233")
+
+        self.pankki_mock.tilisiirto.assert_called_with(ANY, ANY, ANY, ANY, 5)
+        self.varasto_mock.palauta_varastoon.assert_called()
