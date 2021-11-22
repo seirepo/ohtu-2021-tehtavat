@@ -21,3 +21,11 @@ class TestOstoskori(unittest.TestCase):
         self.kori.lisaa_tuote(mehu)
 
         self.assertEqual(self.kori.hinta(), 3)
+
+    def test_kahden_eri_tuotteen_lisaaminen_kasvattaa_tavaroiden_maaraa_korissa(self):
+        mehu = Tuote("mehu", 3)
+        appelsiini = Tuote("appelsiini", 2)
+        self.kori.lisaa_tuote(mehu)
+        self.kori.lisaa_tuote(appelsiini)
+
+        self.assertEqual(self.kori.tavaroita_korissa(), 2)
