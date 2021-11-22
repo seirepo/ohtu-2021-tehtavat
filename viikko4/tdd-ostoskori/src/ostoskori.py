@@ -26,7 +26,15 @@ class Ostoskori:
 
     def lisaa_tuote(self, lisattava: Tuote):
         # lisää tuotteen
-        self.sisalto.append(Ostos(lisattava))
+        loytyi = False
+        for ostos in self.sisalto:
+            if ostos.tuotteen_nimi() == lisattava.nimi():
+                ostos.muuta_lukumaaraa(1)
+                loytyi = True
+        if loytyi:
+            return
+        else:
+            self.sisalto.append(Ostos(lisattava))
 
     def poista_tuote(self, poistettava: Tuote):
         # poistaa tuotteen
