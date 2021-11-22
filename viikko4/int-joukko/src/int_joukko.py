@@ -31,30 +31,13 @@ class IntJoukko:
                 self.ljono = [0] * (self.alkioita + self.kasvatuskoko)
                 self.kopioi_taulukko(taulukko_old, self.ljono)
 
-            return True
-
-        return False
-
     def poista(self, n):
-        indeksi = -1
-        temp = 0
-
         for i in range(0, self.alkioita):
             if n == self.ljono[i]:
-                indeksi = i  # siis luku löytyy tuosta kohdasta :D
-                self.ljono[indeksi] = 0
-                break
-
-        if indeksi != -1:
-            for j in range(indeksi, self.alkioita - 1):
-                temp = self.ljono[j]
-                self.ljono[j] = self.ljono[j + 1]
-                self.ljono[j + 1] = temp
-
-            self.alkioita = self.alkioita - 1
-            return True
-        else:
-            return False
+                self.ljono = self.ljono[:i] + self.ljono[i+1:]
+                self.alkioita -= 1
+                return True
+        return False
 
     def kopioi_taulukko(self, a, b):
         for i in range(0, len(a)):
