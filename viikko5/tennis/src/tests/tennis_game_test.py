@@ -48,9 +48,9 @@ def play_game(p1_points, p2_points):
     game = TennisGame("player1", "player2")
     for i in range(max(p1_points, p2_points)):
         if i < p1_points:
-            game.won_point("player1")
+            game.point_won_by("player1")
         if i < p2_points:
-            game.won_point("player2")
+            game.point_won_by("player2")
     return game
 
 

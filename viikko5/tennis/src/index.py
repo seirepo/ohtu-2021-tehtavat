@@ -6,19 +6,19 @@ def main():
 
     print(game.get_score())
 
-    game.won_point("player1")
+    game.point_won_by("player1")
     print(game.get_score())
 
-    game.won_point("player1")
+    game.point_won_by("player1")
     print(game.get_score())
 
-    game.won_point("player2")
+    game.point_won_by("player2")
     print(game.get_score())
 
-    game.won_point("player1")
+    game.point_won_by("player1")
     print(game.get_score())
 
-    game.won_point("player1")
+    game.point_won_by("player1")
     print(game.get_score())
 
 
