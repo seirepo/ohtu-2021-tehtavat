@@ -12,6 +12,5 @@ def main():
 
     print(joukko.to_int_list())
 
-
 if __name__ == "__main__":
     main()
