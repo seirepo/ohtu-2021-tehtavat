@@ -117,4 +117,4 @@ class Kumoa:
         self._lue_syote = lue_syote
 
     def suorita(self):
-        pass
+        self._sovellus.edellinen()
